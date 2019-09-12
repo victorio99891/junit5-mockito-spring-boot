@@ -14,12 +14,14 @@ public class ReflectionTest {
     @Test
     void simpleTest() throws Exception {
 
-        Class<?> mockClass = Class.forName("pl.wiktor.reflection.Tricky");
+//        Class<?> mockClass = Class.forName("pl.wiktor.reflection.Tricky");
 
-        Constructor<?> constructor = mockClass.getDeclaredConstructor(String.class);
+//        Constructor<?> constructor = mockClass.getDeclaredConstructor(String.class);
+        Constructor<?> constructor = Tricky.class.getDeclaredConstructor(String.class);
         constructor.setAccessible(true);
 
-        Field field = mockClass.getDeclaredField("text");
+//        Field field = mockClass.getDeclaredField("text");
+        Field field = Tricky.class.getDeclaredField("text");
         field.setAccessible(true);
 
         Object obj = constructor.newInstance("Test");
